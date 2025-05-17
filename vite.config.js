@@ -1,14 +1,13 @@
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
 
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
+  assetsInclude: ['**/*.glb'],
+
   server: {
-    watch: {
-      usePolling: true
-    },
-    host: "localhost", // or '127.0.0.1'
-    port: 3000, // Optional: Specify a port number, default is 5173
+    usePolling: true,
+    // host: '0.0.0.0', // Listen on all interfaces (optional, for LAN/public access)
+    port: 3000, // Define the port
   },
 });
